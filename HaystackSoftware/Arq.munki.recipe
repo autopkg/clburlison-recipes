@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest Arq zip file and imports into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.clburlison.munki.arq</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Arq</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/arq</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>description</key>
+            <string>Arq automatically backs up all your Macs. Your files are stored securely, readable only by you. Backups can be stored on Amazon S3, Amazon Glacier, Dropbox, Google Drive, Google Cloud Storage, Microsoft OneDrive, SFTP, and DreamObjects.</string>
+            <key>display_name</key>
+            <string>Arq</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.clburlison.download.arq</string>
+  	<key>Process</key>
+  	<array>
+      <dict>
+          <key>Processor</key>
+          <string>Unarchiver</string>
+          <key>Arguments</key>
+          <dict>
+              <key>archive_path</key>
+              <string>%pathname%</string>
+          </dict>
+      </dict>
+      <dict>
+          <key>Processor</key>
+          <string>DmgCreator</string>
+          <key>Arguments</key>
+          <dict>
+              <key>dmg_root</key>
+              <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+              <key>dmg_path</key>
+              <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+          </dict>
+      </dict>
+      <dict>
+          <key>Processor</key>
+          <string>MunkiImporter</string>
+          <key>Arguments</key>
+          <dict>
+              <key>repo_subdirectory</key>
+              <string>%MUNKI_REPO_SUBDIR%</string>
+              <key>pkg_path</key>
+              <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+              <key>additional_pkginfo</key>
+              <dict>
+                  <key>display_name</key>
+                  <string>%NAME%</string>
+              </dict>
+          </dict>
+      </dict>
+  	</array>
+</dict>
+</plist>
