@@ -2,57 +2,75 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest version of the Amazon Cloud Drive Mac app from Amazon.</string>
-    <key>Identifier</key>
-    <string>com.github.clburlison.download.AmazonCloudDrive</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>AmazonCloudDrive</string>
-        <key>DOWNLOAD_URL</key>
-        <string>https://www.amazon.com/clouddrive/app-download</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.0</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>request_headers</key>
-                <dict>
-                    <key>User-Agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36</string>
-                </dict>
-                <key>url</key>
-                <string>%DOWNLOAD_URL%</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https://.*\.cloudfront\.net/.*/AmazonCloudDriveInstaller\.dmg)</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>request_headers</key>
-                <dict>
-                    <key>User-Agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36</string>
-                </dict>
-                <key>url</key>
-                <string>%url%</string>
-                <key>filename</key>
-                <string>%NAME%.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Amazon Cloud Drive.</string>
+	<key>Identifier</key>
+	<string>com.github.clburlison.download.AmazonCloudDrive</string>
+	<key>Input</key>
+	<dict>
+		<key>APP_FILENAME</key>
+		<string>Amazon Cloud Drive App</string>
+		<key>DOWNLOAD_URL</key>
+		<string>https://d29x207vrinatv.cloudfront.net/mac/AmazonCloudDriveApp.zip</string>
+		<key>NAME</key>
+		<string>Amazon Cloud Drive</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%APP_FILENAME%.app</string>
+				<key>requirement</key>
+				<string>identifier "com.amazon.clouddrive.mac" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "94KV3E626L"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%APP_FILENAME%.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
 </dict>
 </plist>
