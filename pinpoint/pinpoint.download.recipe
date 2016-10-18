@@ -38,6 +38,17 @@
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+				<key>requirement</key>
+				<string>identifier "com.clburlison.pinpoint" and anchor apple generic and certificate leaf[subject.CN] = "Developer ID Installer: Clayton Burlison (RP82Y2QL76)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
