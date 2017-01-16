@@ -5,17 +5,17 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Amazon Cloud Drive.</string>
+	<string>Downloads the latest version of Amazon Drive. In December 2016 Amazon renamed their application from "Amazon Cloud Drive App" to "Amazon Drive".</string>
 	<key>Identifier</key>
 	<string>com.github.clburlison.download.AmazonCloudDrive</string>
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
-		<string>Amazon Cloud Drive App</string>
+		<string>Amazon Drive</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://d29x207vrinatv.cloudfront.net/mac/AmazonCloudDriveApp.zip</string>
+		<string>https://d29x207vrinatv.cloudfront.net/mac/AmazonDriveApp.zip</string>
 		<key>NAME</key>
-		<string>Amazon Cloud Drive</string>
+		<string>Amazon Drive</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>

@@ -5,13 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Amazon Cloud Drive and imports it into Munki.</string>
+	<string>Downloads the latest version of Amazon Drive and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.clburlison.munki.AmazonCloudDrive</string>
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
-		<string>Amazon Cloud Drive App</string>
+		<string>Amazon Drive</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/amazon</string>
 		<key>NAME</key>
@@ -25,15 +25,28 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Amazon Cloud Drive is your place for everything digital. Cloud Drive offers free mobile apps, secure access from any computer, and it's built in to your Amazon devices—so you can access your digital content everywhere you are.</string>
+			<string>Amazon Drive is your place for everything digital. Cloud Drive offers free mobile apps, secure access from any computer, and it's built in to your Amazon devices—so you can access your digital content everywhere you are.</string>
 			<key>developer</key>
 			<string>%DEVELOPER%</string>
 			<key>display_name</key>
-			<string>Amazon Cloud Drive</string>
+			<string>Amazon Drive</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>preinstall_script</key>
+<string>#!/bin/bash
+OLD_APP="/Applications/Amazon Cloud Drive App.app"
+if [ -d "$OLD_APP" ]
+then
+/bin/rm -Rf "$OLD_APP"
+fi
+</string>
+			<key>blocking_applications</key>
+			<array>
+					<string>Amazon Cloud Drive App</string>
+					<string>Amazon Cloud</string>
+			</array>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
