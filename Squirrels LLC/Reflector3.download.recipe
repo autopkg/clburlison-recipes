@@ -2,18 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Reflector 2.</string>
+	<string>Downloads the latest version of Reflector 3.</string>
 	<key>Identifier</key>
-	<string>com.github.clburlison.download.Reflector2</string>
+	<string>com.github.clburlison.download.Reflector3</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Reflector 2</string>
+		<string>Reflector 3</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>https://updates.airsquirrels.com/Reflector2/Mac/Reflector2.xml</string>
+		<string>https://updates.airsquirrels.com/Reflector3/Mac/Reflector3.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
@@ -47,7 +45,7 @@
 				<key>input_path</key>
 				<string>%pathname%/%NAME%.app</string>
 				<key>requirement</key>
-				<string>identifier "com.squirrels.Reflector-2" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "67X2M9MT5G"</string>
+				<string>anchor apple generic and identifier "com.squirrels.Reflector-3" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "67X2M9MT5G")</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
