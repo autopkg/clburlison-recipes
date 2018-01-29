@@ -22,6 +22,8 @@
             <string>Arq automatically backs up all your Macs. Your files are stored securely, readable only by you. Backups can be stored on Amazon S3, Amazon Glacier, Dropbox, Google Drive, Google Cloud Storage, Microsoft OneDrive, SFTP, and DreamObjects.</string>
             <key>display_name</key>
             <string>Arq</string>
+            <key>minimum_os_version</key>
+            <string>10.7.0</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
@@ -36,33 +38,13 @@
   	<array>
       <dict>
           <key>Processor</key>
-          <string>Unarchiver</string>
-          <key>Arguments</key>
-          <dict>
-              <key>archive_path</key>
-              <string>%pathname%</string>
-          </dict>
-      </dict>
-      <dict>
-          <key>Processor</key>
-          <string>DmgCreator</string>
-          <key>Arguments</key>
-          <dict>
-              <key>dmg_root</key>
-              <string>%RECIPE_CACHE_DIR%/Arq/Applications</string>
-              <key>dmg_path</key>
-              <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-          </dict>
-      </dict>
-      <dict>
-          <key>Processor</key>
           <string>MunkiImporter</string>
           <key>Arguments</key>
           <dict>
               <key>repo_subdirectory</key>
               <string>%MUNKI_REPO_SUBDIR%</string>
               <key>pkg_path</key>
-              <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+              <string>%pathname%</string>
               <key>additional_pkginfo</key>
               <dict>
                   <key>display_name</key>
