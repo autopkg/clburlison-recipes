@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>GITHUB_REPO</key>
-		<string>angryziber/ipscan</string>
+		<string>angryip/ipscan</string>
 		<key>NAME</key>
 		<string>Angry IP Scanner</string>
 	</dict>
