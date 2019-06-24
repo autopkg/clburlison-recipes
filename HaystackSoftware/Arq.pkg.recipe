@@ -16,7 +16,7 @@
 		<string>Arq</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.clburlison.download.arq</string>
 	<key>Process</key>
