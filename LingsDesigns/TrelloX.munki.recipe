@@ -19,7 +19,7 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-            <string>A Unofficial Trello App for Mac OS X.</string>
+            <string>An unofficial Trello App for macOS.</string>
             <key>display_name</key>
             <string>TrelloX</string>
             <key>name</key>
