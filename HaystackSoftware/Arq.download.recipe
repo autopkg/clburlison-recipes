@@ -38,6 +38,7 @@
 				<key>purge_destination</key>
 				<true/>
 			</dict>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
