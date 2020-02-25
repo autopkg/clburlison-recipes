@@ -24,6 +24,11 @@
 		<dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Arq.app</string>
+			</dict>
 		</dict>
 	</array>
 </dict>
