@@ -10,8 +10,6 @@
 	<string>com.github.clburlison.pkg.Arq</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.haystacksoftware.Arq</string>
 		<key>NAME</key>
 		<string>Arq</string>
 	</dict>
@@ -22,13 +20,13 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>AppPkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Arq.app</string>
 			</dict>
+			<key>Processor</key>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
