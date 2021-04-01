@@ -14,7 +14,7 @@
 		<string>https://updates.airsquirrels.com/Reflector3/Mac/Reflector3.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -29,8 +29,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<key>url</key>
+				<string>%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
