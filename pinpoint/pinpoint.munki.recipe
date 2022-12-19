@@ -21,9 +21,9 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Python based location script for enabling and finding your Mac.</string>
+			<string>A corporate utility for locating lost or missing Macs.</string>
 			<key>developer</key>
-			<string>Clayton Burlison</string>
+			<string>John Lockwood</string>
 			<key>display_name</key>
 			<string>pinpoint</string>
 			<key>name</key>
