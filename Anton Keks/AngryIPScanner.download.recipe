@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0 (https://github.com/homebysix/recipe-robot)
+GITHUB_ARCH is either Arm64 or X86
+	</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Angry IP Scanner.</string>
 	<key>Identifier</key>
@@ -12,6 +14,8 @@
 	<dict>
 		<key>GITHUB_REPO</key>
 		<string>angryip/ipscan</string>
+		<key>GITHUB_ARCH</key>
+		<string>Arm64</string>
 		<key>NAME</key>
 		<string>Angry IP Scanner</string>
 	</dict>
@@ -25,7 +29,7 @@
 				<key>github_repo</key>
 				<string>%GITHUB_REPO%</string>
 				<key>asset_regex</key>
-				<string>ipscan-mac-.+.zip</string>
+				<string>ipscan-mac%GITHUB_ARCH%-.+.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0 (https://github.com/homebysix/recipe-robot)
+GITHUB_ARCH is either Arm64 or X86
+MUNKI_ARCH is either arm64 or x86_64</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Angry IP Scanner and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -12,6 +14,8 @@
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
+		<key>MUNKI_ARCH</key>
+		<string>arm64</string>
 		<key>NAME</key>
 		<string>Angry IP Scanner</string>
 		<key>pkginfo</key>
